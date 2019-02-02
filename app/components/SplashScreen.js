@@ -3,17 +3,17 @@ import { View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 import styles from './styles';
 
-const { height, width } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 class SplashScreen extends Component {
   constructor(props) {
     super(props)
 
-    this.goToDashboard = this.goToDashboard.bind(this);
+    this.goToSelectState = this.goToSelectState.bind(this);
   }
 
-  goToDashboard() {
-    this.props.navigation.replace('dashboard');
+  goToSelectState() {
+    this.props.navigation.replace('selectState');
   }
 
   getWidth() {
@@ -58,10 +58,10 @@ class SplashScreen extends Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require('../images/logo.png')}
+          source={require('../../images/logo.png')}
           style={{ flex: 1, width: '100%', height: null, resizeMode: 'contain' }}
         />
-        <TouchableOpacity onPress={this.goToDashboard} style={[styles.button, { width: imageWidth }]}>
+        <TouchableOpacity onPress={this.goToSelectState} style={[styles.button, { width: imageWidth }]}>
           <Text style={styles.buttonText}>View Dashboard</Text>
         </TouchableOpacity>
       </View>

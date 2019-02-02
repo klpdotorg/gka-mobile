@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 
-import styles from './styles';
+import styles from '../components/styles';
 
 const Loading = () => {
   return (
@@ -11,4 +11,4 @@ const Loading = () => {
   )
 }
 
-export default Loading;
+export { Loading };

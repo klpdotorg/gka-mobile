@@ -30,6 +30,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  statesPage: {
+    backgroundColor: 'white',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 

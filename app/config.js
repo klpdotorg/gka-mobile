@@ -1,0 +1,1 @@
+export const API_URL = 'https://staging.ilp.org.in'

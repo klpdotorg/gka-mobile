@@ -91,7 +91,7 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 android {
     compileSdkVersion 27
@@ -101,7 +101,7 @@ android {
         applicationId "com.gkadashboard"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 5
+        versionCode 7
         versionName "1.1"
         ndk {
             abiFilters "armeabi-v7a", "x86"

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 import { StackNavigator } from 'react-navigation';
 import { YellowBox, Dimensions } from 'react-native';
-import Orientation from 'react-native-orientation';
+// import Orientation from 'react-native-orientation';
 
-import SplashScreen from './app/SplashScreen';
-import Dashbaord from './app/Dashboard';
+import SplashScreen from './app/components/SplashScreen'
+import Dashbaord from './app/components/Dashboard'
+import SelectState from './app/components/SelectState'
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
@@ -15,6 +16,9 @@ const Routers = StackNavigator({
   },
   dashboard: {
     screen: Dashbaord,
+  },
+  selectState: {
+    screen: SelectState
   }
 }, {
   initialRouteName: 'splashScreen',
@@ -26,33 +30,33 @@ class App extends Component {
     super(props);
   }
 
-  _orientationDidChange = (orientation) => {
-    if (orientation === 'LANDSCAPE') {
-      Orientation.lockToPortrait();
-    } else {
-      Orientation.lockToLandscape();
-    }
-    Orientation.unlockAllOrientations();
-  };
+  // _orientationDidChange = (orientation) => {
+  //   if (orientation === 'LANDSCAPE') {
+  //     Orientation.lockToPortrait();
+  //   } else {
+  //     Orientation.lockToLandscape();
+  //   }
+  //   Orientation.unlockAllOrientations();
+  // };
 
-  componentWillMount() {
-    var initial = Orientation.getInitialOrientation();
+  // componentWillMount() {
+  //   var initial = Orientation.getInitialOrientation();
 
-    if (initial === 'PORTRAIT') {
-      Orientation.lockToLandscape();
-    }
-  }
+  //   if (initial === 'PORTRAIT') {
+  //     Orientation.lockToLandscape();
+  //   }
+  // }
 
-  componentDidMount() {
-    Orientation.addOrientationListener(this._orientationDidChange);
-    setTimeout(() => {
-      Orientation.unlockAllOrientations();
-    }, 4000);
-  }
+  // componentDidMount() {
+  //   Orientation.addOrientationListener(this._orientationDidChange);
+  //   setTimeout(() => {
+  //     Orientation.unlockAllOrientations();
+  //   }, 4000);
+  // }
 
-  componentWillUnmount() {
-    Orientation.removeOrientationListener(this._orientationDidChange);
-  }
+  // componentWillUnmount() {
+  //   Orientation.removeOrientationListener(this._orientationDidChange);
+  // }
 
   render() {
     return <Routers />;
