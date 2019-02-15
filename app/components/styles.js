@@ -34,8 +34,22 @@ const styles = StyleSheet.create({
   statesPage: {
     backgroundColor: 'white',
     flex: 1,
+    paddingTop: 30,
     alignItems: 'center',
-    justifyContent: 'center'
+  },
+  selectDropdownText: {
+    width: '80%',
+    paddingBottom: 10,
+    fontSize: 17,
+    paddingLeft: 5,
+    paddingTop: 15
+  },
+  dropdownCont: {
+    height: 40,
+    width: '80%',
+    borderWidth: 1,
+    borderColor: '#f0f0f0',
+    borderRadius: 5
   }
 });
 

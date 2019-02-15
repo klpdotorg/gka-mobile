@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Picker, TouchableOpacity, Text } from 'react-native'
+import { View, Picker, TouchableOpacity, Text, Image } from 'react-native'
 
 import { Loading } from '../common';
 import { fetchStates } from '../actions'
@@ -58,8 +58,12 @@ class SelectState extends Component {
 
     return (
       <View style={styles.statesPage}>
-        <Text style={{ width: '80%', paddingBottom: 10, fontSize: 17, paddingLeft: 5 }}>Select your state</Text>
-        <View style={{ height: 40, width: '80%', borderWidth: 1, borderColor: '#f0f0f0', borderRadius: 5 }}>
+        <Image
+          source={require('../../images/logo.png')}
+          style={{ height: 200, width: '100%', resizeMode: 'contain' }}
+        />
+        <Text style={styles.selectDropdownText}>Select your state</Text>
+        <View style={styles.dropdownCont}>
           <Picker
             selectedValue={this.state.selectedState}
             style={{ height: 40, width: '100%' }}
